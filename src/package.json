@@ -1,0 +1,14 @@
+{
+  "name": "nw-express-start",
+  "version": "0.0.1",
+  "main": "main.html",
+  "window": {
+    "title": "nw-express-start",
+    "position": "center",
+    "width": 960,
+    "height": 640
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
