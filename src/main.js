@@ -1,8 +1,8 @@
 /**
  * Created by yang on 2016/8/8.
  */
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 app.use(express.static('./public'));
 
@@ -10,6 +10,7 @@ app.use(express.static('./public'));
 //    res.send('Hello World!');
 //});
 
-app.listen(80, function () {
-    console.log('Example app listening on port 3000!');
+const port = 80;
+app.listen(port, () => {
+    console.log('Example app listening on port', port);
 });

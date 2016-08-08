@@ -1,25 +1,27 @@
 /**
  * Created by yang on 2016/8/8.
  */
-var os = require('os');
-var path = require('path');
-var gulp = require('gulp');
-var shelljs = require('shelljs');
-var jetpack = require('fs-jetpack');
+'use strict'
 
-var _isMac = os.type() === 'Darwin';
+const os = require('os');
+const path = require('path');
+const gulp = require('gulp');
+const shelljs = require('shelljs');
+const jetpack = require('fs-jetpack');
 
-var nwVersion = '0.14.7';
+const _isMac = os.type() === 'Darwin';
 
-var manifest = jetpack.read('./src/package.json', 'json');
+const nwVersion = '0.14.7';
+
+const manifest = jetpack.read('./src/package.json', 'json');
 
 // 启动调试
-gulp.task('start', function() {
-    var nwjs = 'res/nw/' + nwVersion + '/win32/nw.exe';
+gulp.task('start', () => {
+    let nwjs = 'res/nw/' + nwVersion + '/win32/nw.exe';
     if (_isMac) {
         nwjs = 'res/nw/' + nwVersion + '/osx64/nwjs.app/Contents/MacOS/nwjs';
     }
-    var nw = path.join(__dirname, nwjs);
+    const nw = path.join(__dirname, nwjs);
     console.log('nwjs:', nw);
     shelljs.exec(nw + ' ./src');
 });
